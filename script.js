@@ -1,5 +1,5 @@
 /*
-/FUNCTION CONSTRUCTORS
+//FUNCTION CONSTRUCTORS
 var Person = function(name, dateOfBirth, job) {
     this.name = name;
     this.dateOfBirth = dateOfBirth;
@@ -33,6 +33,8 @@ console.log(john instanceof Person);
 //console.info();
 */
 
+//////////////////////////////////////////////////////
+
 /*
 //OBJECT.CREATE
 var personProto = {
@@ -42,8 +44,9 @@ var personProto = {
 }
 */
 
+///////////////////////////////////////////////////////
+/*
 //PASSING FUNCTIONS AS ARGUMENTS
-
 var years = [1990, 1965, 1937, 2005, 1998];
 
 function arrayCalc(arr, fn) {
@@ -76,4 +79,95 @@ console.log('ages ' + ages);
 var isAdult = arrayCalc(ages, isAdult);
 console.log('is an adult ' + isAdult);
 var heartRate = arrayCalc(ages, maxHeartRate);
-console.log(heartRate);
+console.log('heart rate ' + heartRate);
+*/
+
+//////////////////////////////////////////////////////////////////////////////////
+/*
+//FIRST CLASS FUNCTIONS: FUNCTIONS RETURNING FUNCTIONS
+function interviewQuestion(job) {
+    if (job === 'designer') {
+        return function(name) {
+            console.log(name + ' can you please explain what UX design is?');
+        }
+    } else if (job === 'teacher') {
+        return function(name) {
+            console.log('What subject do you teach, ' + name + '?');
+        }
+    } else {
+        return function(name) {
+            console.log('Hello ' + name + ', what do you do?');
+        }
+    }
+}
+
+var teacherQuestion = interviewQuestion('teacher');
+teacherQuestion('Joy');
+teacherQuestion('Mike');
+teacherQuestion('John');
+//What subject do you teach, John?
+
+var designerQuestion = interviewQuestion('designer');
+designerQuestion('Bob');
+// Bob can you please explain what UX design is?
+
+interviewQuestion('designer')('James')
+//James can you please explain what UX design is?
+
+//else statment
+var Question = interviewQuestion();
+Question('John');
+// Hello John, what do you do?
+
+var Question = interviewQuestion();
+Question();
+// Hello undefined, what do you do?
+
+//else statement
+interviewQuestion()('Jim');
+//Hello Jim, what do you do?
+
+function gameYouLike(game) {
+    if (game === 'Mario') {
+        return function(name) {
+            console.log('Hey ' + name + ', ' + game + ' sucks');
+        }
+    }else if (game === 'H1Z1') {
+        return function(name) {
+            console.log('Hey ' + name + '. ' + game + ' is awesome.');
+        }
+    }
+}   
+
+gameYouLike('Mario')('Bryant');
+gameYouLike('H1Z1')('Davis');
+var coolGame = gameYouLike('H1Z1');
+coolGame('Joe');
+coolGame('Ken');
+
+function weatherTemp(temp) {
+    if (temp === 'c') {
+        return function(num) {
+            console.log(num * 3 + ' ' + temp);
+        } 
+    } else if (temp === 'f') {
+        return function(num) {
+            console.log(num * 2 + ' ' + temp);
+        }
+    } else {
+        return function(){
+            console.log('the temperature is whack today');
+        }
+    }
+}
+weatherTemp('c')(5);
+//15 c
+weatherTemp('f')(5);
+//10 c
+weatherTemp()();
+//the temperature is whack today
+*/
+
+//////////////////////////////////////////////////////////////////////
+
+//IMMEDIATELY INVOKED FUNCTION EXPRESSIONS (IIFE)
