@@ -189,6 +189,7 @@ weatherTemp()();
 
 ///////////////////////////////////////////////////////////////////////////////
 //CLOSURES
+/*
 function retirement(retirementAge) {
     var a = ' years left until retirement.';
     return function(yearOfBirth) {
@@ -227,3 +228,56 @@ interviewQuestion()();
 
 var teacherQuestion = interviewQuestion('designer');
 teacherQuestion('Dave');
+*/
+
+/////////////////////////////////////////////////////////////////////
+//BIND.CALL AND APPLY
+//call method allows us to set the this variable in the first argument
+//apply method accepts arguments as an array
+
+//bind method similar to call method. You can set this variable explicitally. Bind doens't 
+//immidiately call the function but instead it makes a copy of the function so we can store it.
+
+//apply method wont work here, it's just a deomstration of how it looks like. 
+//it doesnt expect to receive an array as an input therefore it won't work here
+
+var john = {
+    name: "John",
+    age: 26,
+    job: 'teacher',
+    presentation: function(style, timeOfDay) {
+        if (style === 'formal') {
+            console.log('Good ' + timeOfDay + ', ladies and gentlemen! I\'m ' + this.name + 
+            ', I\'m a ' + this.job + ' and I\m ' + this.age + ' years old.');
+        } else if (style === 'friendly') {
+            console.log('Hey! What\'s up? I\'m ' + this.name + ', I\'m a ' + this.job + 
+            ' and I\m ' + this.age + ' years old. Have a nice ' + timeOfDay + '.');
+        }
+    }
+}
+
+john.presentation('formal', 'morning');
+john.presentation('friendly', 'afternoon');
+
+var emily = {
+    name: 'Emily',
+    age: 35, 
+    job: 'designer'
+}
+
+//set this variable in the first argument of the call which is emily. Borrowed the method from John.
+john.presentation.call(emily, 'formal', 'morning');
+john.presentation.call(emily, 'friendly', 'afternoon');
+
+//apply method wont work here, it's just a deomstration of how it looks like. 
+//it doesnt expect to receive an array as an input therefore it won't work here
+// john.presentation.apply(emily, ['friendly', 'afternoon']);
+
+//bind
+var johnFriendly = john.presentation.bind(john, 'friendly');
+var johnAll = john.presentation.bind(john, 'friendly', 'night');
+johnFriendly('morninggg')
+johnAll()
+
+var emilyFriendly = john.presentation.bind(emily, "friendly");
+emilyFriendly('nightttt');
