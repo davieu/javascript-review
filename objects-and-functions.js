@@ -169,5 +169,61 @@ weatherTemp()();
 */
 
 //////////////////////////////////////////////////////////////////////
-
+/*
 //IMMEDIATELY INVOKED FUNCTION EXPRESSIONS (IIFE)
+
+//NOT an IIFE
+// function game() {
+//     var score = Math.floor(Math.random() * 10) + 1;
+//     console.log(score + ' is greater than or equal to 5 is ' + (score >= 5));
+// }
+// game();
+
+//this is an IIFE 5/67
+(function(goodluck) {
+    var score = Math.floor(Math.random() * 10) + 1;
+    console.log(score + ' is greater than or equal to 5 is ' + (score >= 5 - goodluck));
+    //makes it 5-2 = 3 --------- so that means score has to be greater than or equal to 3 to be true
+})(2);
+*/
+
+///////////////////////////////////////////////////////////////////////////////
+//CLOSURES
+function retirement(retirementAge) {
+    var a = ' years left until retirement.';
+    return function(yearOfBirth) {
+        var age = 2018 - yearOfBirth;
+        console.log('you are ' + age + '. ' + (retirementAge - age) + a);
+    }
+}
+
+var retirementUS = retirement(66);
+var retirementGermany = retirement(65);
+var retirementIceland = retirement(67);
+
+retirementUS(1992);
+retirementGermany(1992);
+retirementIceland(1992);
+
+retirement(66)(1992)
+
+function interviewQuestion(job) {
+    return function(name) {
+        if (job === 'designer') {
+            console.log(name + ', can you please explain what UX is?');
+        } else if (job === 'teacher') {
+            console.log('What subject do you teach ' + name + '?');
+        } else {
+            console.log('Hello ' + name + ', what do you do?');
+        }
+    }
+}
+
+interviewQuestion('designer')('Davis');
+interviewQuestion('teacher')('James');
+//else
+interviewQuestion()('Jim');
+interviewQuestion()();
+
+var teacherQuestion = interviewQuestion('designer');
+teacherQuestion('Dave');
