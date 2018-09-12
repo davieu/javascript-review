@@ -340,24 +340,57 @@ var question3 = {
     e: '4: Tedious'
 }
 
+
+
 var questions = [question1, question2, question3]
 
-//randomizes the questions in the array arr
-var randQuestions = arr[Math.floor(Math.random()*arr.length)];
+//randomizes the questions in the array questions
+var randomQuestion = questions[Math.floor(Math.random()*questions.length)];
 
-console.log(random)
+
+
+// console.log(randomQuestion)
+// console.log(questions[0])
+// console.log(questions[0].d)
+
+//gets the answer for the random question
+function questionAnswers(questionParam) {
+    for (var questionDisplay in questionParam) {
+        console.log(questionParam[questionDisplay])
+    }
+    
+    var val = prompt('Please select the correct answer (just type the number). Or type exit to quit').valueOf();
+
+    //did a slice method to just get the value of the first index in the string of answer
+    if (questionParam === questions[0] && val === questions[0].d.slice(0, 1)) {
+        console.log('\n' + val + ' That is right!')
+    } else if (questionParam === questions[1] && val === questions[1].b.slice(0, 1)) {
+        console.log('\n' + val + ' That is right!')
+    } else if (questionParam === questions[2] && val === questions[2].d.slice(0, 1)) {
+        console.log('\n' + val + ' That is right!')
+    } else {
+        console.log('\n' + val + ' is incorrect!')
+    }
+}
+
+questionAnswers(randomQuestion)
+
 
 
 // console.log(question1[0]);
 // console.log(question1[2]);
 
 // function question() {
+
+
 //     for (var questions in question1) {
 //         console.log(question1[questions])
 //     }
 //     var val = prompt('Please select the correct answer (just type the number). Or type exit to quit').valueOf();
 //     if (val === '1') {
 //         console.log(val + ' is the right answer!')
+//     } else if (val === null) {
+//         console.log('Please put in an answer')
 //     } else {
 //         console.log('\n' + val + ' is incorrect!')
 //     }
