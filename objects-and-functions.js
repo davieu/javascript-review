@@ -314,8 +314,11 @@ console.log(fullkiwi)
 
 ///////////////////////////////////////////////////////////////////////
 //QUESTIONAIRE CHALLENGE
+
+/*
 //THIS is my version of the challenge. a questionaire that moves to the next random question and keeps score.
 var score = 0;
+var initial = 0;
 
 var question1 = {
     a: '\nWhat is the name of this course\'s teacher?',
@@ -340,6 +343,7 @@ var question3 = {
 
 var questions = [question1, question2, question3];
 
+console.log('Welcome to the questionaire!')
 //randomizes the questions in the array questions
 var randomQuestion = questions[Math.floor(Math.random()*questions.length)];
 
@@ -349,6 +353,7 @@ function questionAnswers(questionParam) {
     for (var questionDisplay in questionParam) {
         console.log(questionParam[questionDisplay]);
     }
+    
     var val = prompt('Please select the correct answer (just type the number). Or type exit to quit');
 
     //did a slice method to just get the value of the first index in the string of answer
@@ -378,6 +383,30 @@ function questionAnswers(questionParam) {
 }
 
 questionAnswers(randomQuestion)
+*/
+
+//LESSON version of the questionaire
+
+//build function constructor
+function Question(question, answers, correct) {
+    this.question = question;
+    this.answers = answers;
+    this.correct = correct;
+}
+
+var q1 = new Question('Is Javascript the coolest programming language in the world?', 
+                     ['Yes', 'No'],
+                     0);
+var q2 = new Question('What\'s the name of the course\'s teacher?',
+                    ['John', 'Micheal', 'Jonas'],
+                    2);
+var q3 = new Question('What best describes coding?', 
+                    ['Boring', 'Hard', 'Fun', 'Tedious'],
+                    2)
+
+var questions = [q1, q2, q3];
+var n = Math.floor(Math.random() * questions.length);
+console.log(n);
 
 
 
