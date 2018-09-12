@@ -231,6 +231,8 @@ teacherQuestion('Dave');
 */
 
 /////////////////////////////////////////////////////////////////////
+
+/*
 //BIND.CALL AND APPLY
 //call method allows us to set the this variable in the first argument
 //apply method accepts arguments as an array
@@ -278,6 +280,87 @@ var johnFriendly = john.presentation.bind(john, 'friendly');
 var johnAll = john.presentation.bind(john, 'friendly', 'night');
 johnFriendly('morninggg')
 johnAll()
-
 var emilyFriendly = john.presentation.bind(emily, "friendly");
 emilyFriendly('nightttt');
+
+
+var years = [1990, 1965, 1937, 2005, 1998];
+
+function arrayCalc(arr, fn) {
+    var arrRes = [];
+    for (var i = 0; i < arr.length; i++) {
+        arrRes.push(fn(arr[i]));
+    }
+    return arrRes;
+}
+
+function calculateAge(el) {
+    return 2018 - el;
+}
+
+function isFullAge(limit, el) {
+    return el >= limit
+}
+
+
+var ages = arrayCalc(years, calculateAge);
+console.log(ages)
+var fullJapan = arrayCalc(ages, isFullAge.bind(this, 20));
+console.log(fullJapan);
+
+var fullkiwi = arrayCalc(ages, isFullAge.bind(this, 20));
+console.log(fullkiwi)
+*/
+
+///////////////////////////////////////////////////////////////////////
+
+// var val = prompt('Please select the correct answer (just type the number). Or type exit to quit').valueOf();
+// console.log(val)
+
+// var question1 = 'What is the name of this course\'s teacher?'
+
+var question1 = {
+    a: 'What is the name of this course\'s teacher?',
+    b: '1: John',
+    c: '2: Michael',
+    d: '3: Jonas'
+}
+
+var question2 = {
+    a: 'Is Javascript the coolest language in the world?',
+    b: '1: Yes!',
+    c: '2: No!' 
+}
+
+var question3 = {
+    a: 'What best describes coding?',
+    b: '1: Boring',
+    c: '2: Hard',
+    d: '3: Fun',
+    e: '4: Tedious'
+}
+
+var questions = [question1, question2, question3]
+
+//randomizes the questions in the array arr
+var randQuestions = arr[Math.floor(Math.random()*arr.length)];
+
+console.log(random)
+
+
+// console.log(question1[0]);
+// console.log(question1[2]);
+
+// function question() {
+//     for (var questions in question1) {
+//         console.log(question1[questions])
+//     }
+//     var val = prompt('Please select the correct answer (just type the number). Or type exit to quit').valueOf();
+//     if (val === '1') {
+//         console.log(val + ' is the right answer!')
+//     } else {
+//         console.log('\n' + val + ' is incorrect!')
+//     }
+// }
+
+// question()
