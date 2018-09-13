@@ -164,3 +164,93 @@ if (BMIMark > BMIJohn) {
  age >= 20 && age < 30; //false
  age >= 20 || age < 30; //true
  */
+
+ /**********************************************************************
+  * Ternary operator and switch statements
+  */
+/*
+var firstName = 'john';
+var age = 18;
+
+// ternary operator
+age >= 18 ? console.log(firstName + ' drinks beer.') : console.log(firstName + ' drinks juice.');
+
+var drink = age >= 18 ? 'beer' : 'juice';
+console.log(drink)
+
+//if else
+if (age >= 18) {
+    var ofAge = age + ' yes';
+} else {
+    var ofAge = age + ' no'
+}
+console.log(ofAge);
+
+
+//switch statement
+var job = 'programmer';
+switch (job) {
+    case 'teacher':
+    case 'instructor':
+        console.log(firstName + ' teaches kids how to code.');
+        break;
+    case 'driver':
+    case 'taxi':
+        console.log(firstName + ' drives an uber in Lisbon.');
+        break;
+    case 'designer' :
+    case 'coder' :
+    case 'programmer':
+        console.log(firstName + ' designs beautiful websites.');
+        break;
+    default:
+        console.log(firstName + ' does something else.');
+}
+
+age = 30;
+
+switch (true) {
+    case age < 13:
+        console.log(firstName + ' is a boy.');
+        break;
+    case age >= 13 && age < 20:
+        console.log(firstName + ' is a teenager.');
+        break;
+    case age >= 20 && age < 30:
+        console.log(firstName + ' is a young man.');
+        break;
+    default:
+        console.log(firstName + ' is a man.')
+};
+
+// if (age < 13) {
+//     console.log(firstName + ' is a boy.');
+// } else if (age >= 13 && age < 20) {
+//    console.log(firstName + ' is a teenager.');
+// } else if (age >= 20 && age < 30) {
+//    console.log(firstName + ' is a young man.')
+// } else {
+//    console.log(firstName + ' is a man.')
+// };
+*/
+
+
+/**************************************************************************
+ * Truthy and falsy values and equality operators
+ */
+
+ //falsey values: undefined, null, 0, '', NaN
+ //truthy values: anything that is NOT falsy values
+
+ var height;
+ height = 23;
+
+ if (height || height === 0) {
+     console.log('variable is defined');
+ } else {
+     console.log('variable has not been defined');
+ }
+
+ if (height == '23') {
+     console.log('the == operator does type coercion');
+ }
