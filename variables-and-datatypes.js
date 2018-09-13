@@ -268,7 +268,8 @@ switch (true) {
  4. EXTRA: Mary also plays basketball, and her team scored 97, 134 and 105 points. Like before, log the average winner to the console. HINT: you will need the && operator to take the decision. If you can't solve this one, just watch the solution, it's no problem :)
  5. Like before, change the scores to generate different winners, keeping in mind there might be draws.
   */
- 97, 134, 105
+
+ /* 
 var johnTeam = ['john', 70, 134, 105];
 var mikeTeam = ['mike', 116, 94, 123];
 var maryTeam = ['mary', 97, 134, 105];
@@ -301,4 +302,5 @@ function highestAverage(team1, team2, team3) {
 };
 
 var averageHigh = highestAverage(johnAverage, mikeAverage, maryAverage);
+*/
 
