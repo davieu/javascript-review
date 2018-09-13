@@ -242,6 +242,7 @@ switch (true) {
  //falsey values: undefined, null, 0, '', NaN
  //truthy values: anything that is NOT falsy values
 
+ /*
  var height;
  height = 23;
 
@@ -254,3 +255,50 @@ switch (true) {
  if (height == '23') {
      console.log('the == operator does type coercion');
  }
+
+ */
+
+ /***************************************************************************
+  * Coding challenge 2
+
+ John and Mike both play basketball in different teams. In the latest 3 games, John's team scored 89, 120 and 103 points, while Mike's team scored 116, 94 and 123 points.
+ 1. Calculate the average score for each team
+ 2. Decide which teams wins in average (highest average score), and print the winner to the console. Also include the average score in the output.
+ 3. Then change the scores to show different winners. Don't forget to take into account there might be a draw (the same average score)
+ 4. EXTRA: Mary also plays basketball, and her team scored 97, 134 and 105 points. Like before, log the average winner to the console. HINT: you will need the && operator to take the decision. If you can't solve this one, just watch the solution, it's no problem :)
+ 5. Like before, change the scores to generate different winners, keeping in mind there might be draws.
+  */
+ 97, 134, 105
+var johnTeam = ['john', 70, 134, 105];
+var mikeTeam = ['mike', 116, 94, 123];
+var maryTeam = ['mary', 97, 134, 105];
+
+function average(team) {
+    var sum = 0
+    for (var i = 1; i < team.length; i++) {
+        sum += team[i]
+    }
+    return sum / 3;
+}
+
+var johnAverage = average(johnTeam);
+var mikeAverage = average(mikeTeam);
+var maryAverage = average(maryTeam);
+console.log(johnAverage);
+console.log(mikeAverage);
+console.log(maryAverage);
+
+function highestAverage(team1, team2, team3) {
+    if (team1 > team2 && team1 > team3) {
+        console.log(johnTeam[0] + ' ' + johnAverage +  ' is greater than Mike: ' + mikeAverage + ' and ' + maryTeam[0] + ' ' + maryAverage);
+    } else if (team2 > team1 && team2 > team3) {
+        console.log(mikeTeam[0] + ' ' + mikeAverage + ' is greater than John: ' + johnAverage + ' and ' + maryTeam[0] + ' ' + maryAverage);
+    } else if (team3 > team1 && team3 > team2) {
+        console.log(maryTeam[0] + ' ' + maryAverage + ' is greater than John: ' + johnAverage + ' and ' + mikeTeam[0] + ' ' + mikeAverage);
+    } else { 
+        console.log('It is a tie');
+    }
+};
+
+var averageHigh = highestAverage(johnAverage, mikeAverage, maryAverage);
+
