@@ -1,6 +1,8 @@
 /*************************************
  * Basic Operator
- 
+ */
+
+ /*
 var year, yearJoh, yearMark;
 year = 2018;
 ageJohn = 28;
@@ -30,8 +32,9 @@ console.log(typeof x);
 
 /*****************************************
  * Operator precedence
+ */
 
-
+/*
 var now = 2018;
 var yearJohn = 1989
 //29
@@ -67,6 +70,7 @@ console.log(x)
 
  /***************************************************
   * Coding challenge
+  * 
 Mark and John are trying to compare their BMI (Body Mass Index), which is calculated using the formula: BMI = mass / height^2 = mass / (height * height). (mass in kg and height in meter).
 1. Store Mark's and John's mass and height in variables
 2. Calculate both their BMIs
@@ -75,6 +79,7 @@ Mark and John are trying to compare their BMI (Body Mass Index), which is calcul
 GOOD LUCK 😀
 */
 
+/*
 var markHeight, markMass, johnHeight, johnMass;
 var BMI;
 
@@ -94,3 +99,68 @@ console.log('this is Mark\'s BMI: ' + markBMI);
 console.log('this is John\'s BMI: ' + johnBMI);
 var BMIboolean = markBMI > johnBMI;
 console.log('is Mark\'s BMI higher than John\'s BMI?:\n' + 'Mark: ' + markBMI.toFixed(2) + ' ' + 'John: ' + johnBMI.toFixed(2) + ' ---- ' + BMIboolean);
+*/
+
+/**********************************************************
+ * If ELSE statements
+*/
+
+/*
+var firstName = 'john';
+var civilStatus = 'single';
+
+if (civilStatus === 'married') {
+    console.log(firstName + ' is married!');
+} else {
+    console.log(firstName+ ' will hopefully marry soon')
+}
+
+var isMarried = true;
+
+if (isMarried) {
+    console.log(firstName + ' is married!');
+} else {
+    console.log(firstName+ ' will hopefully marry soon')
+}
+
+var massMark = 78;
+var heightMark = 1.69;
+
+var massJohn = 92;
+var heightJohn= 1.95;
+
+var BMIMark = massMark / (heightMark * heightMark);
+var BMIJohn = massJohn / (heightJohn * heightJohn);
+
+if (BMIMark > BMIJohn) {
+    console.log('Mark\'s BMI is higher than John\'s');
+} else {
+    console.log('John\'s BMI is higher than Mark\'s')
+}
+*/
+
+/*********************************************************************
+ * Boolean logic
+ */
+
+ /*
+ var firstName = 'John';
+ var age = 30;
+
+ if (age < 13) {
+     console.log(firstName + ' is a boy.');
+ } else if (age >= 13 && age < 20) {
+    console.log(firstName + ' is a teenager.');
+ } else if (age >= 20 && age < 30) {
+    console.log(firstName + ' is a young man.')
+ } else {
+    console.log(firstName + ' is a man.')
+ };
+
+ age >= 20; //false
+ age < 30; //true
+ !(age < 30); //false - it gets inverted
+
+ age >= 20 && age < 30; //false
+ age >= 20 || age < 30; //true
+ */
