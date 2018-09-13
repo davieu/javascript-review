@@ -423,6 +423,7 @@ c) correct answer (I would use a number for this)
 11. Display the score in the console. Use yet another method for this.
 */
 
+/*
 //IIFE creates new scope wich defines all the code that is in the function. If someone else includes this code in their project
 //and also has a variable called question, answer or n. Their code will not interfere with this code. No other code will overwrite this code
 (function() {
@@ -505,7 +506,9 @@ c) correct answer (I would use a number for this)
     }
     nextQuestion();
 })();
+*/
 
+//////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
 
 
 
