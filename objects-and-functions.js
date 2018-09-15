@@ -109,6 +109,7 @@ function interviewQuestion(job) {
     }
 }
 
+interviewQuestion('teacher')('Dave')
 var teacherQuestion = interviewQuestion('teacher');
 teacherQuestion('Joy');
 teacherQuestion('Mike');
