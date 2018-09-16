@@ -7,8 +7,14 @@
         {
             "type": "node",
             "request": "launch",
-            "name": "Launch Program",
+            "name": "objects-and-functions",
             "program": "${workspaceFolder}/objects-and-functions.js"
+        },
+        {
+            "type": "node",
+            "request": "launch",
+            "name": "js-basics",
+            "program": "${workspaceFolder}/js-basics.js"
         }
     ]
 }

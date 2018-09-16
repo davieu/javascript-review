@@ -378,6 +378,7 @@ var whatDoYouDo = function(job, firstName) {
   * Arrays
   */
 
+  /*
   //initialize new array
   var names = ['John', 'Mark', 'Jane'];
   //other way of making arrays. Not as widely used
@@ -410,3 +411,63 @@ console.log(john.indexOf('designer')) //-1 // indexOf will return -1 if the argu
 
 var isDesigner = john.indexOf('teacher') === -1 ? john[0] + ' is NOT a designer' : john[0] + ' is a ' + john[3] + '.';
 console.log(isDesigner); //John is NOT a designer
+*/
+
+/********************************************************************************************
+* CODING CHALLENGE 3
+*/
+
+/*
+John and his family went on a holiday and went to 3 different restaurants. The bills were $124, $48 and $268.
+To tip the waiter a fair amount, John created a simple tip calculator (as a function). He likes to tip 20% of the 
+bill when the bill is less than $50, 15% when the bill is between $50 and $200, and 10% if the bill is more than $200.
+In the end, John would like to have 2 arrays:
+1) Containing all three tips (one for each bill)
+2) Containing all three final paid amounts (bill + tip).
+(NOTE: To calculate 20% of a value, simply multiply it with 20/100 = 0.2)
+*/
+
+var bills = [124, 48, 268];
+
+function tipCalculator(bill) {
+    var tips = [];
+    var total = [];
+    return function() {
+        for (var i = 0; i < bill.length; i++) {
+            if (bill[i] < 50) {
+                //same as the others below but without variables
+                tips.push((bill[i] * .20).toFixed(2))
+                total.push((bill[i] * .20 + bill[i]).toFixed(2))
+
+            } else if (bill[i] >= 50 && bill[i] <= 200) {
+                var tipIt2 = bill[i] * .15;
+                var preTotal2 = tipIt2 + bill[i] 
+
+                tips.push(tipIt2.toFixed(2))
+                total.push(preTotal2.toFixed(2));
+
+            } else if (bill[i] + bill[i] > 200) {
+                var tipIt3 = bill[i] * .10;
+                var preTotal3 = tipIt3 + bill[i]
+
+                tips.push(tipIt3.toFixed(2))
+                total.push(preTotal3.toFixed(2));
+
+            } else {
+                console.log('error')
+            }
+        }
+        return [tips, total];
+        //es6 object return, both work
+        //return {tips, total};
+    }
+}
+var billTips = tipCalculator(bills)();
+
+console.log('bills ' + bills)
+//returned as object
+// console.log('bill tips ' + billTips.tips)
+// console.log('bill total ' + billTips.total)
+//returned as array
+console.log('bill tips ' + billTips[0])
+console.log('bill total ' + billTips[1])
