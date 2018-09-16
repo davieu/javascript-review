@@ -340,11 +340,12 @@ yearsUntilRetirement(1954, 'Bob');
  * Function statements and Expressions
  */
 
- //FUNCTION DECLARATION
+ /*
+//FUNCTION DECLARATION - do not produce immediate results
 // function whatDoYouDo(job, firstName) {
 // };
 
-// FUNCTION EXPRESSION
+// FUNCTION EXPRESSION - produce immediate result/value
 var whatDoYouDo = function(job, firstName) {
     switch(job) {
         case 'teacher':
@@ -361,3 +362,51 @@ var whatDoYouDo = function(job, firstName) {
  console.log(whatDoYouDo('teacher', 'John'));
  console.log(whatDoYouDo('designer', 'Jane'));
  console.log(whatDoYouDo('retired', 'Mark'))
+
+ //statements and expressions - 
+ //expressions are code that always produce a value ex. 
+ // 2 + 3 value is 5
+ // whatDoYouDo('teacher', 'John')  //value is "John teaches kids how to code"
+ // typeof 23   //the value is "number"
+ 
+ //statements: they just perform actions. do not produce immediate results or values
+ // if/else, while loops, or function declaration
+ // if (true) { console.log(23)} //true and logs 23
+ */
+
+ /*****************************************************************************
+  * Arrays
+  */
+
+  //initialize new array
+  var names = ['John', 'Mark', 'Jane'];
+  //other way of making arrays. Not as widely used
+  var years = new Array(1990, 1969, 1948);
+
+  console.log(names); //whole array
+  console.log(names[1]); //Mark
+  console.log(names[2]); //Jane
+  console.log(names.length); //3
+
+  //mutate array data
+  names[1] = 'Ben';
+  names[names.length] = 'Mary';
+  names[5] = "Bob"
+  console.log(names); //"John", "Ben", "Jane", "Mary", empty/undefined, "Bob"
+
+//different data types
+var john = ['John', 'Smith', 1990, 'teacher', false];
+
+john.push('blue'); //pushes 'blue' to the end of array, "John", "Smith", 1990, "teacher", false, "blue"
+john.unshift('Mr.'); //adds 'Mr.' to beginnning of array, "Mr.", "John", "Smith", 1990, "teacher", false, "blue"
+console.log(john);
+
+john.pop(); //removes element from the end.
+john.shift(); // removes element from the beginning
+console.log(john);   //"John", "Smith", 1990, "teacher", false
+
+console.log(john.indexOf('teacher'));  //3 //indexOf returns the position of the argument that we pass in
+console.log(john.indexOf('designer')) //-1 // indexOf will return -1 if the argument is not found
+
+var isDesigner = john.indexOf('teacher') === -1 ? john[0] + ' is NOT a designer' : john[0] + ' is a ' + john[3] + '.';
+console.log(isDesigner); //John is NOT a designer
