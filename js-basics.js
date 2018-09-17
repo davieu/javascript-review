@@ -427,6 +427,7 @@ In the end, John would like to have 2 arrays:
 (NOTE: To calculate 20% of a value, simply multiply it with 20/100 = 0.2)
 */
 
+/* MY VERSION of CHALLENGE 3
 var bills = [124, 48, 268];
 
 function tipCalculator(bill) {
@@ -436,6 +437,7 @@ function tipCalculator(bill) {
         for (var i = 0; i < bill.length; i++) {
             if (bill[i] < 50) {
                 //same as the others below but without variables
+                //pushing the values to tips and total arrays.
                 tips.push((bill[i] * .20).toFixed(2))
                 total.push((bill[i] * .20 + bill[i]).toFixed(2))
 
@@ -471,3 +473,34 @@ console.log('bills ' + bills)
 //returned as array
 console.log('bill tips ' + billTips[0])
 console.log('bill total ' + billTips[1])
+*/
+
+/*
+//TEACHER VERSION OF CHALLENGE 3
+function tipCalculator(bill) {
+    var percentage;
+    if (bill < 50) {
+        percentage = .2;
+    } else if (bill >= 50 && bill < 200) {
+        percentage = .15;
+    } else {
+        percentage = .10;
+    }
+    return percentage * bill;
+}
+
+var bills = [124, 48, 268];
+var tips = [tipCalculator(bills[0]),
+            tipCalculator(bills[1]),
+            tipCalculator(bills[2])];
+var finalValues = [bills[0] + tips[0],
+                  bills[1] + tips[1],
+                  bills[2] + tips[2]]
+
+console.log(tips);
+console.log(finalValues);
+*/
+
+/****************************************************************************
+ * Objects and properties
+ */
