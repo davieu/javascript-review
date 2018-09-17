@@ -504,3 +504,31 @@ console.log(finalValues);
 /****************************************************************************
  * Objects and properties
  */
+
+ var john = {
+     firstName: 'john',
+     lastName: 'smith',
+     birthYear: 1990,
+     family: ['jane', 'mark', 'bob', 'emily'],
+     isMarried: false
+ };
+
+ console.log(john);  
+ console.log(john.firstName);  //john
+ console.log(john['lastName']);  //smith 
+ var x = 'birthYear';
+ console.log(john[x]);  //1990
+
+ john.job = 'designer';
+ john['isMarried'] = true;
+ john.family[0] = 'JIMMY';  //"JIMMY", "POOP", "bob", "emily"
+ john['family'][1] = 'POOP';  //"JIMMY", "mark", "bob", "emily"
+ john.lastName = 'Umana'; 
+ console.log(john);
+
+ //other way of creating object
+ var jane = new Object();
+ jane.firstName = 'jane';
+ jane.birthYear = 1969;
+ jane['lastName'] = 'smith';
+ console.log(jane);
