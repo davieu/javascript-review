@@ -641,4 +641,214 @@ if (john.calcBMI() > mark.calcBMI()) {
  * Loops and iteration
  */
 
+ /*
+ //FOR LOOP
+ for (var i = 1; i <= 3; i++) {
+    console.log(i);
+ } //0-10
+
+ for (var i = 2; i <= 6; i += 2) {
+    console.log(i);
+ }
+
+ for (var i = 3; i >= 0; i -= 1) {
+    console.log(i);
+ } //reverse
  
+ 
+ var john = ['john', 'smith', 1990, 'designer', false];
+ for (var i = 0; i < john.length; i++) {
+     console.log(john[i]);
+ }
+
+
+ //WHILE LOOP
+ var i = 0;
+ while(i < john.length) {
+     console.log(john[i]);
+     i++;
+ }
+ */
+
+/*
+ // continue and break statements
+
+ var john = ['john', 'smith', 1990, 'designer', false, 'blue'];
+ for (var i = 0; i < john.length; i++) {
+    //when john[i] is different from a string then continue
+     if (typeof john[i] !== 'string') continue;
+     // you don't need curly braces for small ifs.
+     // if (typeof john[i] !== 'string') {continue;};
+     console.log('first: ' + john[i]);
+        //john, smith, designer
+ }
+
+ for (var i = 0; i < john.length; i++) {
+     //when john[i] is different from a string then continue
+    if (typeof john[i] !== 'string') break;
+    // you don't need curly braces for small ifs.
+    // if (typeof john[i] !== 'string') {continue;};
+    console.log('second: ' + john[i]);
+    //john, smith
+}
+
+for (var i = 0; i < john.length; i++) {
+    if (typeof john[i] === 'string') {console.log('third: ' + john[i]);};
+    // you don't need curly braces for small ifs.
+    // if (typeof john[i] !== 'string') {continue;};
+       //john, smith, designer
+}
+
+//reverse lopping
+for (var i = john.length - 1; i >= 0; i--) {
+    if (typeof john[i] === 'string') {console.log('reverse: ' + john[i]);};
+}
+
+for (var i = john.length - 1; i >= 0; i--) {
+    console.log('reverse two: ' + john[i]);
+};
+*/
+
+
+/*****************************************************************************************8
+ * CHALLENGE 5
+ */
+
+ /*
+bills = {
+    johnBills: [124, 48, 268, 180, 42],
+    mikeBills: [77, 375, 110, 45],
+    tipCalcJohn: function(bill) {
+        var arrTips = [];
+        var arrTotals = [];
+        var percentage = 0;
+        for (var i = 0; i < bill.length; i++) {
+            if (bill[i] < 50) {
+
+                percentage = .20;
+                var tipped = bill[i] * percentage;
+
+                arrTips.push(tipped);
+                arrTotals.push((tipped + bill[i]));
+                this.tipsJohn = arrTips;
+                this.totalsJohn = arrTotals;
+               
+                tipsJohn = this.tipsJohn;
+                totalsJohn = this.totalsJohn;
+
+            } else if (bill[i] > 49 && bill[i] < 200) {
+
+                percentage = .15;
+                var tipped = bill[i] * percentage;
+
+                arrTips.push(tipped);
+                arrTotals.push((tipped + bill[i]));
+                this.tipsJohn = arrTips;
+                this.totalsJohn = arrTotals;
+                
+                tipsJohn = this.tipsJohn;
+                totalsJohn = this.totalsJohn;
+
+            } else if (bill[i] > 199) {
+
+                percentage = .10;
+                var tipped = bill[i] * percentage;
+
+                arrTips.push(tipped);
+                arrTotals.push((tipped + bill[i]));
+                this.tipsJohn = arrTips;
+                this.totalsJohn = arrTotals;
+                
+                tipsJohn = this.tipsJohn;
+                totalsJohn = this.totalsJohn;
+
+            } else {
+                console.log('error');
+            }
+        }
+        return {tipsJohn, totalsJohn}
+    },
+    tipCalcMike: function(bill) {
+        var arrTips = [];
+        var arrTotals = [];
+        var percentage = 0;
+        for (var i = 0; i < bill.length; i++) {
+            if (bill[i] < 100) {
+
+                percentage = .20;
+                var tipped = bill[i] * percentage;
+
+                arrTips.push(tipped);
+                arrTotals.push((tipped + bill[i]));
+                this.tipsMike = arrTips;
+                this.totalsMike = arrTotals;
+                
+                tipsMike = this.tipsMike;
+                totalsMike = this.totalsMike;
+
+            } else if (bill[i] > 99 && bill[i] < 301) {
+
+                percentage = .15;
+                var tipped = bill[i] * percentage;
+
+                arrTips.push(tipped);
+                arrTotals.push((tipped + bill[i]));
+                this.tipsMike = arrTips;
+                this.totalsMike = arrTotals;
+                
+                tipsMike = this.tipsMike;
+                totalsMike = this.totalsMike;
+
+            } else if (bill[i] > 300) {
+
+                percentage = .10;
+                var tipped = bill[i] * percentage;
+
+                arrTips.push(tipped);
+                arrTotals.push((tipped + bill[i]));
+                this.tipsMike = arrTips;
+                this.totalsMike = arrTotals;
+                
+                tipsMike = this.tipsMike;
+                totalsMike = this.totalsMike;
+
+            } else {
+                console.log('error');
+            }
+        }
+        return {tipsMike, totalsMike}
+    }
+}
+
+bills.tipCalcJohn(bills.johnBills)
+bills.tipCalcMike(bills.mikeBills)
+ console.log(bills.tipCalcJohn(bills.johnBills));
+ console.log(bills.tipCalcMike(bills.mikeBills));
+ console.log(bills);
+ console.log(bills.tipsJohn);
+
+ function average(avg) {
+     sum = 0;
+        for (var i = 0; i < avg.length; i++) {
+            sum += avg[i];
+            var avgAll = sum / avg.length
+        }
+        return avgAll;
+ }
+
+var johnAvg = average(bills.tipsJohn);
+var mikeAvg = average(bills.tipsMike);
+
+function compareTips(avg1, avg2) {
+    if (avg1 > avg2) {
+        console.log('john: ' + johnAvg + ' ---- Mike: ' + mikeAvg)
+    } else if (avg2 > avg1) {
+        console.log('john: ' + johnAvg + ' ---- Mike: ' + mikeAvg)
+    } else {
+        console.log('it\'s a tie')
+    }
+}
+
+compareTips(johnAvg, mikeAvg);
+compareTips(mikeAvg, johnAvg);
+*/
