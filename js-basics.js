@@ -559,7 +559,7 @@ console.log(john);
  * coding challenge 4
  */
 
- /*
+/*
  //MY VERSION CHALLENGE 4
  //you cannot put toFixed(2) method on the BMIfunction in the objects. It will messup the if else statemts
  var mark = {
@@ -576,9 +576,10 @@ console.log(john);
      firstName: 'John',
      lastName: 'Wick',
      height: 1.7,
-     mass: 160,
+     mass: 162,
      BMIfunc: function() {
         this.BMI = this.mass / Math.pow(this.height, 2)
+        return this.bmi;
      }
  }
 
@@ -603,5 +604,41 @@ console.log(john);
  BMIcompare(mark, john);
  BMIcompare(john, mark);
  */
+ 
 
+ /*
  //TEACHER VERSION CHALLENGE 4
+ var mark = {
+    fullName: 'Mark Miller',
+    height: 1.69,
+    mass: 85,
+    calcBMI: function() {
+        this.BMI = this.mass / (this.height * this.height);
+        return this.BMI;
+    }
+}
+
+var john = {
+    fullName: 'John Wick',
+    height: 1.69,
+    mass: 78,
+    calcBMI: function() {
+       this.BMI = this.mass / (this.height * this.height)
+       return this.BMI;
+    }
+}
+
+if (john.calcBMI() > mark.calcBMI()) {
+    console.log(john.fullName + ' has a higher BMI of ' + john.BMI);
+} else if (mark.BMI  > john.BMI) {
+    console.log(mark.fullName + ' has a higher BMI of ' + mark.BMI);
+} else {
+    console.log('They have the same BMI');
+}
+*/
+
+/*******************************************************************************************
+ * Loops and iteration
+ */
+
+ 
