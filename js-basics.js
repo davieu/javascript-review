@@ -538,7 +538,7 @@ console.log(finalValues);
  /***************************************************************************************
   * Objects and methods
   */
-
+/*
   var john = {
       firstName: 'john',
       lastName: 'smith',
@@ -553,3 +553,55 @@ console.log(finalValues);
 
 john.calcAge();
 console.log(john);
+*/
+
+/*****************************************************************************************
+ * coding challenge 4
+ */
+
+ /*
+ //MY VERSION CHALLENGE 4
+ //you cannot put toFixed(2) method on the BMIfunction in the objects. It will messup the if else statemts
+ var mark = {
+     firstName: 'Mark',
+     lastName: 'Beam', 
+     height: 1.7,
+     mass: 160,
+     BMIfunc: function() {
+         this.BMI = this.mass / Math.pow(this.height, 2)
+     }
+ }
+
+ var john = {
+     firstName: 'John',
+     lastName: 'Wick',
+     height: 1.7,
+     mass: 160,
+     BMIfunc: function() {
+        this.BMI = this.mass / Math.pow(this.height, 2)
+     }
+ }
+
+ mark.BMIfunc();
+ john.BMIfunc();
+
+ console.log(mark);
+ console.log(john);
+ console.log('mark\'s BMI: ' + mark.BMI)
+ console.log('john\'s BMI: ' + john.BMI)
+
+ function BMIcompare(p1, p2) {
+    if (p1.BMI > p2.BMI) {
+        console.log(p1.firstName + ' ' + p1.lastName + '(' + (p1.BMI).toFixed(2) + ' BMI)' + ' has a greater BMI than ' + p2.firstName + ' ' + p2.lastName + '(' + (p2.BMI).toFixed(2) + ' BMI). 1' )
+    } else if (p2.BMI > p1.BMI) {
+        console.log(p2.firstName + ' ' + p2.lastName + '(' + (p2.BMI).toFixed(2) + ' BMI)' + ' has a greater BMI than ' + p1.firstName + ' ' + p1.lastName + '(' + (p1.BMI).toFixed(2) + ' BMI). 2' )
+    } else {
+        console.log(p1.firstName + ' ' + p1.lastName + '(' + (p1.BMI).toFixed(2) + ' BMI) and ' + p2.firstName + ' ' + p2.lastName + '(' + (p2.BMI).toFixed(2) + ' BMI) --- BMI\'s are a tie');
+    }
+ };
+
+ BMIcompare(mark, john);
+ BMIcompare(john, mark);
+ */
+
+ //TEACHER VERSION CHALLENGE 4
