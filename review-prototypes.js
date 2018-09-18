@@ -66,6 +66,7 @@ Person instanceof Object // true
  * Object.create
  */
 
+ /*
 var personProto = {
     calculateAge: function() {
         console.log(2016 - this.yearOfBirth);
@@ -83,3 +84,56 @@ var jane = Object.create(personProto,
     yearOfBirth: {value: 1969},
     job: {value: 'designer'}
 });
+*/
+
+/******************************************************************
+ * Primitives vs objects
+ */
+
+ //variables containing primitives actually hold that data inside the variable itself
+ //vairiables associated with objects do not actually contain the object. instead contains a reference to the place in memory where the object sits where the object is stored. It does not have a real copy of the object it just points to the object
+
+ //primitives - numbers, strings, booleans, null, undefined
+ //everythinh else are objects
+
+ //PRIMITIVES
+ // each variable holding primitives has their own copy of the data. They do not reference anything
+ var a = 23;
+ var b = a;
+ a = 46;
+ console.log(a); //46
+ console.log(b); //23  
+
+ //OBJECTS
+ var obj1 = {
+     name: 'john',
+     age: 26
+ }
+
+ var obj2 = obj1;
+ obj1.age = 30;
+ console.log(obj1.age);
+ console.log(obj2.age);
+
+ //FUNCTIONS
+ var age = 27;
+ var poo = 22
+ var obj = {
+     name: 'jonas',
+     city: 'lisbon'
+ }
+
+
+ function change(a, b) {
+
+    a = 30;
+    poo = 20
+    b.city = 'san francisco';
+ }
+ change(age, obj);
+
+//when you pass a primitive into a function a simple copy is created
+ console.log(age); //27
+ //when you pass an object it's not really the object that you pass but the reference of the object
+ console.log(obj.city); //'san francisco'
+ console.log(poo);
