@@ -96,6 +96,7 @@ var jane = Object.create(personProto,
  //primitives - numbers, strings, booleans, null, undefined
  //everythinh else are objects
 
+ /*
  //PRIMITIVES
  // each variable holding primitives has their own copy of the data. They do not reference anything
  var a = 23;
@@ -137,3 +138,4 @@ var jane = Object.create(personProto,
  //when you pass an object it's not really the object that you pass but the reference of the object
  console.log(obj.city); //'san francisco'
  console.log(poo);
+ */
