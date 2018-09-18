@@ -950,3 +950,7 @@ if (john.average > mark.average) {
     console.log(mark.fullName + '\'s family pays higher tips, with an average of $' + mark.average)
 }
 */
+
+/*************************************************************************************
+ * JS version es5, es6 / es2015 and es6+
+ */
