@@ -43,3 +43,43 @@ var ages5 = years.map(function(el) {
      }
  }
  box5.clickMe();
+
+ const box6 = {
+    color: 'green',
+    position: 1,
+    clickMe: function() {
+
+        document.querySelector('.green').addEventListener('click', () => {
+            var str = 'this is box number ' + this.position + ' and it is ' + this.color;
+            alert(str);
+        })
+    }
+}
+box6.clickMe();
+
+/*
+const box66 = {
+    color: 'green',
+    position: 1,
+    clickMe: () => {
+
+        document.querySelector('.green').addEventListener('click', () => {
+            var str = 'this is box number ' + this.position + ' and it is ' + this.color;
+            alert(str);
+        })
+    }
+}
+box66.clickMe();
+*/
+
+
+function Person(name) {
+    this.name = name;
+}
+
+//es5
+Person.prototype.myFriends = function(friends) {
+    var arr = friends.map(function(el) {
+        return this.name + ' is friends with ' + el;    })
+        console.log(arr);
+}
