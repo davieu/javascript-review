@@ -1,6 +1,8 @@
 /***********************************************************
  * es6
  */
+
+/*
 const years = [1990, 1965, 1982, 1937];
 
 var ages5 = years.map(function(el) {
@@ -20,3 +22,24 @@ var ages5 = years.map(function(el) {
  });
 
  console.log(ages6);
+ */
+
+
+/***********************************************************
+ * Arrow functions: /lexical this keyword
+ */
+
+ //es5 
+ var box5 = {
+     color: 'green',
+     position: 1,
+     clickMe: function() {
+
+        var self = this;
+         document.querySelector('.green').addEventListener('click', function() {
+             var str = 'this is box number ' + self.position + ' and it is ' + self.color;
+             alert(str);
+         })
+     }
+ }
+ box5.clickMe();
