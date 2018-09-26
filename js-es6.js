@@ -79,7 +79,27 @@ function Person(name) {
 
 //es5
 Person.prototype.myFriends = function(friends) {
+
     var arr = friends.map(function(el) {
-        return this.name + ' is friends with ' + el;    })
+
+        return this.name + ' is friends with ' + el;    }.bind(this));
+
         console.log(arr);
 }
+
+var friends = ['bob', 'jane', 'mark'];
+new Person('john').myFriends(friedns);
+
+//es6
+
+Person.prototype.myFriends6 = function(friends) {
+
+    var arr = friends.map(el => 
+
+        `${this.name} is friends with ${el}`);
+
+        console.log(arr);
+}
+
+new
+Person('Mike').myFriends6(friends);
