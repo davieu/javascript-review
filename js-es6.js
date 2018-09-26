@@ -72,7 +72,7 @@ const box66 = {
 box66.clickMe();
 */
 
-
+/*
 function Person(name) {
     this.name = name;
 }
@@ -102,4 +102,33 @@ Person.prototype.myFriends6 = function(friends) {
 }
 
 new
-Person('Mike').myFriends6(friends);
+Person('Mike').myFriends6(friends)
+*/
+
+/************************************************************
+ * destructureing
+ */
+
+ //es5 
+ var john = ['john', 26];
+//  var name = john[0];
+//  var age = john[1];
+
+
+ //es6
+ const [name, year] = ['john', 26]
+
+ const obj = {
+     firstName: 'john',
+     lastName: 'Smith'
+ };
+
+ const {firstName, lastName} = obj;
+
+ function calcAgeRetirement(year) {
+     const age = new
+     Date().getFullYear() - year;
+     return [age, 65 - age];
+ }
+
+ 
