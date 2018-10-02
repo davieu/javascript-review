@@ -1,5 +1,5 @@
 /*************************************************************************
- * let and const
+ * LET AND CONST
  */
 
 
@@ -69,9 +69,11 @@ console.log(j);  //23
 
 
 /**************************************************************************************
- * blocks and IIFEs
+ * BLOCKS AND IIFEs
  */
 
+
+ /*
  //es6
  {
      const a = 1;
@@ -86,3 +88,37 @@ console.log(c); //3
  })();
 
 //  console.log(c);
+*/
+
+
+/*********************************************************************************
+ * STRINGS
+ */
+
+ /*
+ let firstName = 'john';
+ let lastName = 'smith';
+ const yearOfBirth = 1990;
+ calcAge = (year) => {
+     return 2016 - year;
+ }
+
+//  calcAge = year => 2016 - year;   -----shorter way of writing
+
+ //es5
+ console.log('This is ' + firstName + ' ' + lastName + 
+ '. He was born in ' + yearOfBirth + '. Today he is ' +
+  calcAge(yearOfBirth) + ' years old.');
+
+
+//es6 template literals
+console.log(`This is ${firstName} ${lastName}. He was born in ${yearOfBirth}. Today he is ${calcAge(yearOfBirth)} years old.`);
+
+const n = `${firstName} ${lastName}`;
+console.log(n.startsWith('j'));
+console.log(n.endsWith('h'));
+console.log(n.includes('jo'));
+console.log(firstName.repeat(3))
+console.log(`${firstName} `.repeat(3))
+console.log(n);
+*/
