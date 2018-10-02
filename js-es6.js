@@ -66,3 +66,23 @@ for (var j = 0; j < 4; j++) {
 
 console.log(j);  //23
 */
+
+
+/**************************************************************************************
+ * blocks and IIFEs
+ */
+
+ //es6
+ {
+     const a = 1;
+     let b = 2;
+     var c = 3;
+ }
+console.log(c); //3
+
+ //es5
+ (function() {
+    var c = 3;
+ })();
+
+//  console.log(c);
