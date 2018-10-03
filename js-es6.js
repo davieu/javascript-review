@@ -165,6 +165,7 @@ console.log(ages6);
  * ARROW FUNCTIONS LEXICAL "this"
  */
 
+ /*
  //es5
  var box5 = {
      color: 'green',
@@ -216,6 +217,7 @@ box6.clickMe();
 box66.clickMe();
 */
 
+/*
 //call, bind, apply allow us to define the this variable manually
 // and bind creates a copy of the function while call calls it immediately
 
@@ -252,3 +254,117 @@ Person.prototype.myFriends6 = function(friends) {
 }
 
 new Person('john').myFriends6(friends);
+*/
+
+
+/******************************************************************************
+ * DESTRUCTURING
+ */
+
+ /*
+ //ARRAY
+ var john = ['john', 26];
+//  var name = john[0];
+//  var age = john[1];
+
+ const [name, age] = ['john', 26];
+ console.log(name);
+ console.log(age);
+
+
+ //OBJECT
+ const obj = {
+    firstName: 'john',
+    lastName: 'smith'
+ };
+
+ const {firstName, lastName} = obj;
+//  console.log(firstName);
+//  console.log(lastName);
+ 
+ const {firstName: a, lastName: b} = obj;
+ console.log(a);
+ console.log(b);
+ */
+
+
+/*
+calcAgeRetirement = (year) => {
+    age = new Date().getFullYear() - year;
+    return [age, 65 - age];
+}
+
+const [age2, retirement] = calcAgeRetirement(1990);
+console.log(age2);
+console.log(retirement);
+*/
+
+
+/************************************************************************
+ * ARRAYS in es6
+ */
+
+
+//Array.from() *********  makes a nodelist gathered from the html into an array
+
+ //es5
+
+ const boxes = document.querySelectorAll('.box');
+
+ var boxesArr5 = Array.prototype.slice.call(boxes);
+ boxesArr5.forEach((cur) => {
+    cur.style.backgroundColor = 'dodgerblue';
+ });
+
+ console.log(boxesArr5);
+
+
+
+ const boxesArr6 = Array.from(boxes);
+
+ boxesArr6.forEach((cur) => {
+    cur.style.backgroundColor = 'dodgerblue';
+ })
+
+
+//  boxesArr6.map((cur) => {
+//      cur.style.backgroundColor = 'red';
+//  })
+
+
+//es5
+/*
+for (var i = 0; i < boxesArr5.length; i++) {
+    
+    if (boxesArr5[i].className === 'box blue') {
+        continue;
+    }
+
+    boxesArr5[i].textContent = 'I changed to blue';
+}
+*/
+
+
+//es6
+for (const cur of boxesArr6) {
+    if (cur.className.includes('blue')) {
+        continue;
+    }
+    cur.textContent = 'I changed to blue';
+}
+
+
+//es5
+var ages = [12, 17, 8, 21, 14, 11];
+
+var full = ages.map((cur) => {
+    return cur >= 18;
+})
+console.log(full); //[false, false, false, true, false, false]
+console.log(full.indexOf(true));  //3
+console.log(ages[full.indexOf(true)]);  //21
+
+//es6
+//has access to the current element, current index, and whole array
+console.log(ages.findIndex(cur => cur >= 18));  //3
+console.log(ages.find(cur => cur >= 18))  //21
