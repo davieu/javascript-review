@@ -437,7 +437,7 @@ function isFullAge5() {
 */
 
 
-
+/*
 //ES$ with a parameter. You have to exclude first one from the array
 function isFullAge5(limit) {
     // console.log(arguments);
@@ -460,3 +460,47 @@ function isFullAge5(limit) {
  }  
 
  isFullAge6(16, 1990, 1999, 1965, 2016, 1987);
+ */
+
+
+ /*************************************************************************
+  * DEFAULT PARAMETERS
+  */
+
+  /*
+  //es5
+  function SmithPerson(firstName, yearOfBirth, lastName, nationality) {
+
+
+        lastName === undefined ? lastName = 'smith': lastName = lastName;
+        nationality === undefined ? nationality = 'american' : nationality = nationality;
+        
+        this.firstName = firstName;
+        this.yearOfBirth = yearOfBirth;
+        this.lastName = lastName;
+        this.nationality = nationality;  
+  }
+
+  var john = new SmithPerson('john', 1990);
+  var emily = new SmithPerson('emily', 1983, 'diaz', 'spanish');
+  */
+
+
+  /*
+  //ES6
+  function SmithPerson(firstName, yearOfBirth, lastName = 'smith', nationality = 'american') {
+      this.firstName = firstName;
+      this.yearOfBirth = yearOfBirth;
+      this.lastName = lastName;
+      this.nationality = nationality;
+  };
+
+  var john = new SmithPerson('john', 1990);
+  var emily = new SmithPerson('emily', 1983, 'diaz', 'spanish');
+  */
+
+
+
+  /*****************************************************************************
+   * MAPS
+   */
