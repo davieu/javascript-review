@@ -597,8 +597,88 @@ Person6.greeting();
 
 
 /***************************************************************************************
- * CLASSES WITH CUBCLASSES
+ * CLASSES WITH SUBCLASSES
  */
 
- 
+var Person5 = function(name, yearOfBirth, job) {
+    this.name = name;
+    this.yearOfBirth = yearOfBirth;
+    this.job = job;
+}
 
+//Person5 is the super class
+Person5.prototype.calculateAge = function() {
+    var age = new Date().getFullYear() - this.yearOfBirth;
+    console.log(age);
+}
+
+//call operator - creates a new empty object calls the athlete function constuctor 
+//and sets the this keyword to the newly created empty objects
+
+//in execution context the this keyword will point to the new empty object. if we 
+//want to the Person property: name, year, and job to be set on the new athlete object
+// then we need to call the Person function contructor with the this keyword also set 
+//to the newly created athlete object. all the properties will be set in the new athlete
+// object thats created by the new operator and thats why we need to call it here and set 
+//the this variable to this
+
+//Athlete5 is the subclass
+var Athlete5 = function(name, yearOfBirth, job, olympicGames, medals) 
+{
+    Person5.call(this, name, yearOfBirth, job);
+    this.olympicGames = olympicGames;
+    this.medals = medals;
+}
+
+//Person5 is the super class and proto of Athlete5. Athlete5 is the subclass
+Athlete5.prototype = Object.create(Person5.prototype);
+
+Athlete5.prototype.wonMedal = function() {
+    this.medals++;
+    console.log(this.medals);
+}
+
+//object.create allows us to manually set the prototype of the object. We want
+// the prototype of the Athlete to be the prototype of the Person so they become connected
+
+
+var johnAthlete5 = new Athlete5('john', 1990, 'swimmer', 3, 10);
+
+johnAthlete5.calculateAge();
+johnAthlete5.wonMedal();
+
+
+//ES6***************
+
+class Person6 {
+    constructor(name, yearOfBirth, job) {
+        this.name = name;
+        this.yearOfBirth = yearOfBirth;
+        this.job = job;
+    }
+
+    calculateAge() {
+        var age = new Date().getFullYear() - this.yearOfBirth;
+        console.log(age);
+    }
+}
+
+class Athlete6 extends Person6 {
+    constructor(name, yearOfBirth, job, olympicGames, medals) 
+    {
+        //super() will call the super class
+        super(name, yearOfBirth, job);
+        this.olympicGames = olympicGames;
+        this.medals = medals;
+    }
+
+    wonMedal() {
+        this.medals++;
+        console.log(this.medals);
+    }
+}
+
+const johnAthlete6 = new Athlete6('john', 1990, 'swimmer', 3, 10)
+
+johnAthlete6.calculateAge();
+johnAthlete6.wonMedal();
