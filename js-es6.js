@@ -505,6 +505,11 @@ function isFullAge5(limit) {
    * MAP DATASTRUCTURE
    */
 
+//use anything as keys including numbers. Maps are irritable and can be easy to loop through and manipulate data. 
+//Also easy to get the size of the map using the size property. You can easily add and remove data from a map.
+//this is the best over objects if you want to make hash maps
+
+/*
 const question = new Map();
 question.set('question', 'What is the new official name of the latest major javascript version?');
 question.set(1, 'es5');
@@ -541,3 +546,59 @@ for (let [key, value] of question.entries()) {
 const ans = parseInt(prompt('write the correct answer'));
 
 console.log(question.get(ans === question.get('correct')));
+*/
+
+/*********************************************************************************************
+ * ES6 CLASSES
+ */
+
+ /*
+//es5
+var Person5 = function(name, yearOfBirth, job) {
+    this.name = name;
+    this.yearOfBirth = yearOfBirth;
+    this.job = job;
+}
+
+Person5.prototype.calculateAge = function() {
+    var age = new Date().getFullYear() - this.yearOfBirth;
+    console.log(age);
+}
+
+var john5 = new Person5('john', 1990, 'teacher');
+
+
+//es6
+//class definitions are not hoisted. unlike function contructors we need to first implement a class
+//and only later in the code you can start using them. You can only add methods to classes but not properties
+class Person6 {
+    contructor (name, yearOfBirth, job) {
+        this.name = name; 
+        this.yearOfBirth = yearOfBirth;
+        this.job = job;
+    }
+
+    calculateAge() {
+        var age = new Date().getFullYear() - this.yearOfBirth;
+        console.log(age);
+    }
+
+    //STATIC METHODS - attached to class but not inherited by class instances(like john6)
+    static greeting() {
+        console.log('hey there')
+    }
+}
+
+var john6 = new Person6('john', 1990, 'teacher');
+console.log(new Date().getFullYear())
+
+Person6.greeting();
+*/
+
+
+/***************************************************************************************
+ * CLASSES WITH CUBCLASSES
+ */
+
+ 
+
