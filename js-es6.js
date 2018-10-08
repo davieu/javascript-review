@@ -600,6 +600,8 @@ Person6.greeting();
  * CLASSES WITH SUBCLASSES
  */
 
+
+/*
 var Person5 = function(name, yearOfBirth, job) {
     this.name = name;
     this.yearOfBirth = yearOfBirth;
@@ -682,7 +684,36 @@ const johnAthlete6 = new Athlete6('john', 1990, 'swimmer', 3, 10)
 
 johnAthlete6.calculateAge();
 johnAthlete6.wonMedal();
+*/
+
 
 /************************************************************************************
  * CHALLENGE 8
  */
+
+class Streets {
+    constructor(name, buildyear) 
+    {
+        this.name = name;
+        this.buildYear = buildyear;            
+    }
+}
+
+class Parks {
+    constructor(name, buildyear, area, trees) 
+    {
+        this.name = name;
+        this.buildYear = buildyear;
+        this.area = area;
+        this.trees = trees;
+    }
+
+    treeDensity(trees, areas) {
+        var treeDensity = this.trees / this.areas
+        console.log(treeDensity);
+    }   
+}
+
+const nationalPark = new Parks('National Park', 1960, 300, 1000, 500);
+
+// nationalPark.treeDensity()
