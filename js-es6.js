@@ -702,6 +702,7 @@ johnAthlete6.wonMedal();
  * CHALLENGE 8
  */
 
+ /*
 class Streets {
     constructor(name, buildyear) 
     {
@@ -719,12 +720,58 @@ class Parks {
         this.trees = trees;
     }
 
-    treeDensity(trees, areas) {
-        var treeDensity = this.trees / this.areas
+    treeDensity(trees, area) {
+        var treeDensity = this.trees / this.area
         console.log(treeDensity);
     }   
+
+    avgParkAge() {
+
+    }
 }
 
-const nationalPark = new Parks('National Park', 1960, 300, 1000, 500);
+const nationalPark = new Parks('National Park', 1960, 300, 1000);
+const greenPark = new Parks('Green Park', 1950, 200, 1000);
+const oakPark = new Parks('Oak Park', 1970, 600, 3000);
 
 // nationalPark.treeDensity()
+*/
+
+class Element {
+    constructor(name, buildYear) {
+        this.name = name;
+        this.buildYear = buildYear;
+    }
+}
+
+class Park extends Element {
+    constructor(name, buildYear, area, numTrees) {
+        super(name, buildYear);
+        this.area = area;
+        this.numTrees;
+    }
+
+    treeDensity() {
+        const denstiy = this.numTrees / this.area;
+        console.log(`${this.name} has a tree density of ${denstiy} trees per square km.`)
+    }
+}
+
+class Street extends Element {
+    constructor(name, buildYear, length, size = 3) {
+        super(name, buildYear);
+        this.length = length;
+        this.size = size;
+    }
+
+    classifyStreet {
+        const classification = new Map();
+        classification.set(1, 'tiny');
+        classification.set(2, 'small');
+        classification.set(3, 'normal');
+        classification.set(4, 'big');
+        classification.set(5, 'huge');
+        console.log(`${this.name}, build in ${this.buildYear}, is a ${classification.get(this.size)}`)
+    }
+}
+
