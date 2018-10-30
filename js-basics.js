@@ -427,7 +427,8 @@ In the end, John would like to have 2 arrays:
 (NOTE: To calculate 20% of a value, simply multiply it with 20/100 = 0.2)
 */
 
-/* MY VERSION of CHALLENGE 3
+//MY VERSION of CHALLENGE 3
+/*
 var bills = [124, 48, 268];
 
 function tipCalculator(bill) {
@@ -459,21 +460,22 @@ function tipCalculator(bill) {
                 console.log('error')
             }
         }
-        return [tips, total];
+        // return [tips, total];
         //es6 object return, both work
-        //return {tips, total};
+        return {tips, total};
     }
 }
 var billTips = tipCalculator(bills)();
 
 console.log('bills ' + bills)
 //returned as object
-// console.log('bill tips ' + billTips.tips)
-// console.log('bill total ' + billTips.total)
+console.log('bill tips ' + billTips.tips)
+console.log('bill total ' + billTips.total)
 //returned as array
-console.log('bill tips ' + billTips[0])
-console.log('bill total ' + billTips[1])
+// console.log('bill tips ' + billTips[0])
+// console.log('bill total ' + billTips[1])
 */
+
 
 /*
 //TEACHER VERSION OF CHALLENGE 3

@@ -804,14 +804,31 @@ const allStreets = [
                     new Street('Sunset Boulevard', 1982, 2.5, 5)
                     ];
 
+function calc(arr) {
+    //with reduce you have access to the current value, index, and previous value
+    //the 0 is another argument for the reduce method. it is the initial value of the accumilator. 
+    //0 is number it starts at. sum starts at 0
+    const sum = arr.reduce(previous, cur, index => {previous + cur, 0});
+    // how it works with fake array[3,5,6] 0 + 3 = 3, 3 + 5 = 8, 8 + 6 = 14
+    return[sum, sum / arr.length]
+}
+
+
 function reportParks(p) {
     console.log('--------------PARKS REPORT------------')
 
     //density
     p.foreach(el => el.treeDensity());
+
     //average age
+    const ages = p.map(el => new Date.getFullYear() - el.buildYear);
+    const [totalAge, avgAge] = calc(ages);
+    console.log(`Our ${p.length} parks have an average of ${avgAge} years.`);
 
     //which park has more than 1000 trees
+    const i = p.map(el => el.numTrees).findIndex(el => el >= 1000);
+    console.log(`${p[i].name} has more than 1000 trees.`)
+
 }
 
 reportStreets = s => {
