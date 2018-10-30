@@ -124,6 +124,7 @@ console.log(n);
 */
 
 
+
 /*******************************************************************************
  * ARROW FUNCTIONS
  */
@@ -309,28 +310,38 @@ console.log(retirement);
 
 /*
  //es5
- const boxes = document.querySelectorAll('.box');
-
- var boxesArr5 = Array.prototype.slice.call(boxes);
- boxesArr5.forEach((cur) => {
-    cur.style.backgroundColor = 'dodgerblue';
- });
-
- console.log(boxesArr5);
+const boxes = document.querySelectorAll('.box');
 
 
+//  var boxesArr5 = Array.prototype.slice.call(boxes);
+//  boxesArr5.forEach((cur) => {
+//     cur.style.backgroundColor = 'dodgerblue';
+//  });
+
+//  console.log(boxesArr5);
+
+newArray = ['yo', 'yoyo', 'yoyoyo']
 
  const boxesArr6 = Array.from(boxes);
+ console.log(boxesArr6);
+ console.log(boxes)
+
+for (var i = 0; i < boxesArr6.length; i++) {
+    boxesArr6[i].textContent = newArray[i];
+    console.log(boxesArr6[i])
+}
 
  boxesArr6.forEach((cur) => {
     cur.style.backgroundColor = 'dodgerblue';
- })
+    cur.style.color = 'red'
+})
+*/
 
 
 //  boxesArr6.map((cur) => {
 //      cur.style.backgroundColor = 'red';
 //  })
-*/
+
 
 
 //es5
