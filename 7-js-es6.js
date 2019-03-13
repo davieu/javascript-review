@@ -752,6 +752,11 @@ const oakPark = new Parks('Oak Park', 1970, 600, 3000);
 // nationalPark.treeDensity()
 */
 
+
+/****************************************************
+ * challenge 8 2nd attempt
+ */
+/*
 class Element {
     constructor(name, buildYear) {
         this.name = name;
@@ -825,3 +830,4 @@ function reportStreets(s) {
 
 reportParks(allParks);
 reportStreets(allStreets);
+*/
