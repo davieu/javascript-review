@@ -762,16 +762,15 @@ class Element {
 class Park extends Element {
     constructor(name, buildYear, area, numTrees) {
         super(name, buildYear);
-        this.area = area; //km2
+        this.area = area;
         this.numTrees = numTrees;
     }
 
     treeDensity() {
-        const denstiy = this.numTrees / this.area;
-        console.log(`${this.name} has a tree density of ${denstiy} trees per square km.`)
+        const density = this.numTrees / this.area;
+        console.log(`${this.name} has a tree density of ${density} trees per square km.`);
     }
 }
-
 
 class Street extends Element {
     constructor(name, buildYear, length, size = 3) {
@@ -791,46 +790,38 @@ class Street extends Element {
     }
 }
 
-const allParks = [
-                new Park('Green Park', 1987, 0.2, 215), 
-                new Park('National Park', 1894, 2.9, 3541),
-                new Park('Oak Park', 1953, 0.4, 949)
-                ];
+const allParks = [new Park('Green Park', 1987, 0.2, 215), new Park('National Park', 1894, 2.9, 3541), new Park('Oak Park', 1953, 0.4, 949)];
 
-const allStreets = [
-                    new Street('Ocean Avenue', 1999, 1.1, 4),
-                    new Street('Evergreen Street', 2008, 2.7, 2),
-                    new Street('4th Street', 2015, 0.8),
-                    new Street('Sunset Boulevard', 1982, 2.5, 5)
-                    ];
+const allStreets = [new Street('Ocean Avenue', 1999, 1.1, 4), new Street('Evergreen street', 2008, 2.7, 2), new Street('4th Street', 2015, 0.8), new Street('Sunset Boulevard', 1982, 2.5, 5)];
 
 function calc(arr) {
-    //with reduce you have access to the current value, index, and previous value
-    //the 0 is another argument for the reduce method. it is the initial value of the accumilator. 
-    //0 is number it starts at. sum starts at 0
-    const sum = arr.reduce(previous, cur, index => {previous + cur, 0});
-    // how it works with fake array[3,5,6] 0 + 3 = 3, 3 + 5 = 8, 8 + 6 = 14
+    //prev + cur, 0  the zero is the initial value for where you want to start
+    const sum = arr.reduce((prev, cur, index) => prev + cur, 0);
     return[sum, sum / arr.length]
 }
 
-
 function reportParks(p) {
-    console.log('--------------PARKS REPORT------------')
-
+    console.log('-----PARKS REPORT-----');
     //density
-    p.foreach(el => el.treeDensity());
-
+    p.forEach(el => el.treeDensity());
     //average age
-    const ages = p.map(el => new Date.getFullYear() - el.buildYear);
+    const ages = p.map((el) => new Date().getFullYear() - el.buildYear);
     const [totalAge, avgAge] = calc(ages);
     console.log(`Our ${p.length} parks have an average of ${avgAge} years.`);
-
     //which park has more than 1000 trees
-    const i = p.map(el => el.numTrees).findIndex(el => el >= 1000);
-    console.log(`${p[i].name} has more than 1000 trees.`)
+    const i = p.map(el => el.numTrees).findIndex(el => el >= 1000); 
+    console.log(`${p[i].name} has more than 1000 trees. With ${p[i].numTrees} trees.`);
+}
+                                                                                            
+function reportStreets(s) {
+    console.log('-----STREETS REPORT-----');
+    //total and average length of the town's streets
+    const [totalLength, avgLength] = calc(s.map(el => el.length));
+    console.log(`Our ${s.length} streets have a total length of ${totalLength} km, with an average of ${avgLength} km.`)
 
+    //classify sizes
+    s.forEach(el => el.classifyStreet());
 }
 
-reportStreets = s => {
-
-}
+reportParks(allParks);
+reportStreets(allStreets);
